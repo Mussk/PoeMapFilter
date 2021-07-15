@@ -2,6 +2,7 @@
 using System.Drawing;
 using Forms = System.Windows.Forms;
 using Resx = PoeBadMapsMod.resources.lang.Resources;
+using AutoUpdaterDotNET;
 
 namespace PoeBadMapsMod
 {
@@ -37,7 +38,7 @@ namespace PoeBadMapsMod
 
         private void onUpdatesClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            AutoUpdater.Start("https://github.com/Mussk/PoeMapFilter/tree/master/Update/Version.xml");
         }
 
         private void onSettingsClick(object sender, EventArgs e)

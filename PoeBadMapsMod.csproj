@@ -5,6 +5,10 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon>LogoText.ico</ApplicationIcon>
+	<AssemblyName>PoeBadMapsMod</AssemblyName>
+	<RootNamespace>PoeBadMapsMod</RootNamespace>
+	<AssemblyVersion>0.9.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autoupdater.NET.Official" Version="1.6.4" />
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.1.0" />
     <PackageReference Include="gong-wpf-dragdrop" Version="2.3.2" />
     <PackageReference Include="HotkeyListener" Version="1.9.0" />
