@@ -1,0 +1,64 @@
+﻿<Window x:Class="PoeBadMapsMod.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoeBadMapsMod"
+        xmlns:res="clr-namespace:PoeBadMapsMod.resources.lang"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="13"
+        FontFamily="{StaticResource Fontin-Regular}"
+        Title="{x:Static res:Resources.About_WindowName}" Height="450" Width="400" 
+        ResizeMode="NoResize" Icon ="resources/icon/LogoTextWindow.ico">
+    <DockPanel>
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.9*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"  HorizontalAlignment="Left" Width="200" Margin="100,45,0,19" 
+                   Source="\resources\pictures\LogoNoText.png"
+                   RenderOptions.BitmapScalingMode="Fant" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" Width="300" Content="PoeMapFilter"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="24" FontFamily="{StaticResource Fontin-Regular}"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" Width="300" Content="{x:Static res:Resources.About_VersionLabel}"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="15" FontFamily="{StaticResource Fontin-Regular}"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" Width="300" Content="{x:Static res:Resources.About_CreatedByLabel}"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="20" FontFamily="{StaticResource Fontin-Regular}"/>
+            <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"  HorizontalAlignment="Center" Width="Auto" Margin="100 10 100 10" 
+                   Source="/resources/pictures/GitHub-Mark.png" 
+                   Hyperlink.Click="Image_Click"/>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Width="Auto" Content="{x:Static res:Resources.About_FontByLabel}"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="14" FontFamily="{StaticResource Fontin-Regular}" Hyperlink.Click="Label_Font_Click"/>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Width="Auto" Content="Copyright (c) 2021 Mussk"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="13" FontFamily="{StaticResource Fontin-Regular}"/>
+            <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" Width="Auto" Content="{x:Static res:Resources.About_FoundBugLabel}"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="13" FontFamily="{StaticResource Fontin-Regular}" Hyperlink.Click="Label_Bug_Click"/>
+        </Grid>
+    </DockPanel>
+</Window>

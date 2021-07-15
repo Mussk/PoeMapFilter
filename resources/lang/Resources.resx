@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutButton" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About_CreatedByLabel" xml:space="preserve">
+    <value>Created by: Mussk</value>
+  </data>
+  <data name="About_FontByLabel" xml:space="preserve">
+    <value>Font by: exlijbris.nl</value>
+  </data>
+  <data name="About_FoundBugLabel" xml:space="preserve">
+    <value>Found bug?</value>
+  </data>
+  <data name="About_VersionLabel" xml:space="preserve">
+    <value>Version: </value>
+  </data>
+  <data name="About_WindowName" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AddButton" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AllModsLabel" xml:space="preserve">
+    <value>All mods:</value>
+  </data>
+  <data name="DeleteLabel" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ErrorWindowName" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="HotkeyLabel" xml:space="preserve">
+    <value>Hotkey:</value>
+  </data>
+  <data name="ItemClassString" xml:space="preserve">
+    <value>Item Class: Maps</value>
+  </data>
+  <data name="JsonParseHiddenString" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="LanguageComboBoxTooltip" xml:space="preserve">
+    <value>Attention! After changing the language for the first time mods should be seleced again.</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Language (restart needed):</value>
+  </data>
+  <data name="MapWindowName" xml:space="preserve">
+    <value>Map Window</value>
+  </data>
+  <data name="ModsLabel" xml:space="preserve">
+    <value>Mods:</value>
+  </data>
+  <data name="ModsSelectionLabel" xml:space="preserve">
+    <value>Mods selection</value>
+  </data>
+  <data name="NoInternetMessage" xml:space="preserve">
+    <value>Unable to load map mods. Check your Internet connection and try again</value>
+  </data>
+  <data name="NotifyIconCheckUpdates" xml:space="preserve">
+    <value>Check Updates</value>
+  </data>
+  <data name="NotifyIconExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="NotifyIconGitHubPage" xml:space="preserve">
+    <value>GitHub Page</value>
+  </data>
+  <data name="NotifyIconSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="OtherSettingsLabel" xml:space="preserve">
+    <value>Other Settings</value>
+  </data>
+  <data name="PoeWikiMapModsURL" xml:space="preserve">
+    <value>https://pathofexile.fandom.com/api.php?action=cargoquery&amp;tables=mods,spawn_weights&amp;join_on=mods._pageID=spawn_weights._pageID&amp;fields=stat_text&amp;where=mods.domain=5%20AND%20NOT%20mods.name=%22%22%20AND%20spawn_weights.weight%20%3E%200&amp;limit=500&amp;format=json</value>
+  </data>
+  <data name="QuantityTextBox" xml:space="preserve">
+    <value>Item Quantity: +{0}%</value>
+  </data>
+  <data name="SelectedModsLabel" xml:space="preserve">
+    <value>Selected mods:</value>
+  </data>
+  <data name="SettingsAllModsSearchPlaceholder" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="SettingsWindow" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SoundSignalLabel" xml:space="preserve">
+    <value>Sound signal:</value>
+  </data>
+  <data name="TierTextBox" xml:space="preserve">
+    <value>Tier: </value>
+  </data>
+</root>

@@ -1,0 +1,19 @@
+﻿<Application x:Class="PoeBadMapsMod.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PoeBadMapsMod"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:CustomColorTheme BaseTheme="Dark" PrimaryColor="Red" SecondaryColor="Red"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <FontFamily x:Key="Fontin-Regular">pack://application:,,,/resources/fonts/#Fontin Regular</FontFamily>
+            <FontFamily x:Key="Fontin-Italic">pack://application:,,,/resources/fonts/#Fontin Italic</FontFamily>
+            <FontFamily x:Key="Fontin-Bold">pack://application:,,,/resources/fonts/#Fontin Bold</FontFamily>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
