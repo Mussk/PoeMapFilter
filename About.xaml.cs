@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace PoeBadMapsMod
 {
     /// <summary>
@@ -22,8 +24,9 @@ namespace PoeBadMapsMod
         public About()
         {
             InitializeComponent();
-        }
 
+            About_Version_Label.Content += Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
         private void Image_Click(object sender, RoutedEventArgs e)
         {
 

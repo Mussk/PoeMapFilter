@@ -39,7 +39,8 @@
             <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" Width="300" Content="{x:Static res:Resources.About_VersionLabel}"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
-                   FontSize="15" FontFamily="{StaticResource Fontin-Regular}"/>
+                   FontSize="15" FontFamily="{StaticResource Fontin-Regular}"
+                   x:Name="About_Version_Label"/>
             <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" Width="300" Content="{x:Static res:Resources.About_CreatedByLabel}"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
