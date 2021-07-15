@@ -38,7 +38,7 @@ namespace PoeBadMapsMod
 
         private void onUpdatesClick(object sender, EventArgs e)
         {
-            AutoUpdater.Start("https://github.com/Mussk/PoeMapFilter/tree/master/Update/Version.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/Mussk/PoeMapFilter/master/Update/Version.xml");
         }
 
         private void onSettingsClick(object sender, EventArgs e)
