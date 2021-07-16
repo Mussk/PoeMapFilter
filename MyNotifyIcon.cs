@@ -1,8 +1,8 @@
-﻿using System;
+﻿using PoeMapFIlter;
+using System;
 using System.Drawing;
 using Forms = System.Windows.Forms;
 using Resx = PoeMapFIlter.resources.lang.Resources;
-using AutoUpdaterDotNET;
 
 namespace PoeMapFilter
 {
@@ -33,12 +33,12 @@ namespace PoeMapFilter
 
         private void onGitHubClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            System.Diagnostics.Process.Start("https://github.com/Mussk/PoeMapFilter");
         }
 
         private void onUpdatesClick(object sender, EventArgs e)
         {
-            AutoUpdater.Start("https://raw.githubusercontent.com/Mussk/PoeMapFilter/master/Update/Version.xml");
+            new UpdateHandler();
         }
 
         private void onSettingsClick(object sender, EventArgs e)
