@@ -12,11 +12,7 @@ namespace PoeMapFIlter
 {
     public class UpdateHandler
     {
-
         string versionURL = "https://raw.githubusercontent.com/Mussk/PoeMapFilter/master/Update/Version.xml";
-
-        //change before each update
-        string assemblyVersion = "0.9.2.0";
 
         public UpdateHandler()
         {
