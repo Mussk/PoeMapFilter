@@ -14,6 +14,8 @@ namespace PoeMapFilter
 
         private KeysManager keysManager;
 
+        
+
         public MyNotifyIcon(Program program,KeysManager keysManager)
         {
             this.program = program;
@@ -33,7 +35,7 @@ namespace PoeMapFilter
 
         private void onGitHubClick(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Mussk/PoeMapFilter");
+            System.Diagnostics.Process.Start("explorer.exe",Links.GitHubPage);
         }
 
         private void onUpdatesClick(object sender, EventArgs e)

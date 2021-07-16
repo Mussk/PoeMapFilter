@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Windows;
 using System.Diagnostics;
+using PoeMapFIlter;
 
 namespace PoeMapFilter
 {
@@ -17,17 +18,17 @@ namespace PoeMapFilter
         }
         private void Image_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/Mussk/PoeMapFilter");
+            Process.Start("explorer.exe",Links.GitHubPage);
         }
 
         private void Label_Bug_Click(object sender, RoutedEventArgs e)
         { 
-            Process.Start("https://github.com/Mussk/PoeMapFilter/issues");
+            Process.Start("explorer.exe",Links.BugReport);
         }
 
         private void Label_Font_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.exljbris.com/fontin.html");
+            Process.Start("explorer.exe",Links.FontLink);
         }
     }
 }
