@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Windows;
 using WindowsInput;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     public class KeysManager
     {

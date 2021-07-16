@@ -6,9 +6,12 @@
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
 	<ApplicationIcon>LogoText.ico</ApplicationIcon>
-	<AssemblyName>PoeBadMapsMod</AssemblyName>
-	<RootNamespace>PoeBadMapsMod</RootNamespace>
+	<AssemblyName>PoeMapFilter</AssemblyName>
+	<RootNamespace>PoeMapFIlter</RootNamespace>
 	<AssemblyVersion>0.9.0.0</AssemblyVersion>
+	<Product>PoeMapFilter</Product>
+	<Company>PoeMapFilter</Company>
+	<Authors>Mussk</Authors>
   </PropertyGroup>
 
   <ItemGroup>

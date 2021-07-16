@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using Forms = System.Windows.Forms;
-using Resx = PoeBadMapsMod.resources.lang.Resources;
+using Resx = PoeMapFIlter.resources.lang.Resources;
 using AutoUpdaterDotNET;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     class MyNotifyIcon
     {
@@ -20,7 +20,7 @@ namespace PoeBadMapsMod
             this.keysManager = keysManager;
             _notifyIcon = new();
             _notifyIcon.Icon = new System.Drawing.Icon("resources/icon/LogoText.ico");
-            _notifyIcon.Text = "PoeBadMapsMod";
+            _notifyIcon.Text = "PoeMapFilter";
             _notifyIcon.Visible = true;
 
             _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();

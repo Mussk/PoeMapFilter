@@ -6,12 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows;
-using PoeBadMapsMod.ViewModels;
+using PoeMapFilter.ViewModels;
 using System.Collections.ObjectModel;
 using System.Media;
-using Resx = PoeBadMapsMod.resources.lang.Resources;
+using Resx = PoeMapFIlter.resources.lang.Resources;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     public class Program
     {

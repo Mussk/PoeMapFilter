@@ -11,7 +11,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace PoeBadMapsMod.ViewModels
+namespace PoeMapFilter.ViewModels
 {
 
     public class SelectedModViewModel : IDropTarget

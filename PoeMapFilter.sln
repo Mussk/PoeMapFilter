@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoeBadMapsMod", "PoeBadMapsMod.csproj", "{1C038734-766D-449F-82FA-E49DC0E9C580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoeMapFilter", "PoeMapFilter.csproj", "{1C038734-766D-449F-82FA-E49DC0E9C580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

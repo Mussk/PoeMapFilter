@@ -10,7 +10,7 @@ using WK.Libraries.HotkeyListenerNS;
 using System.Threading;
 using System.Globalization;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     /// <summary>
     /// Interaction logic for App.xaml

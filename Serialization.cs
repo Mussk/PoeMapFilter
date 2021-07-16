@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Globalization;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     public class Serialization<T>
     {

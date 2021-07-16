@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     public class MyWebClient : WebClient
     {

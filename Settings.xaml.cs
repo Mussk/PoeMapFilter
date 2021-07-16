@@ -7,15 +7,15 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
-using PoeBadMapsMod.ViewModels;
+using PoeMapFilter.ViewModels;
 using System.IO;
 using System.Windows.Input;
 using WK.Libraries.HotkeyListenerNS;
 using System.Resources;
-using Resx = PoeBadMapsMod.resources.lang.Resources;
+using Resx = PoeMapFIlter.resources.lang.Resources;
 using System.Threading;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     /// <summary>
     /// Interaction logic for Settings.xaml

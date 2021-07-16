@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     /// <summary>
     /// Interaction logic for About.xaml

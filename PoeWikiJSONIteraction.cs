@@ -7,10 +7,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
-using Resx = PoeBadMapsMod.resources.lang.Resources;
+using Resx = PoeMapFIlter.resources.lang.Resources;
 
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     class PoeWikiJSONIteraction
     {

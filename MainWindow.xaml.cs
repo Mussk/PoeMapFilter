@@ -12,9 +12,9 @@ using System.Threading;
 using System.Resources;
 using System.Reflection;
 using System.Globalization;
-using Resx = PoeBadMapsMod.resources.lang.Resources;
+using Resx = PoeMapFIlter.resources.lang.Resources;
 
-namespace PoeBadMapsMod
+namespace PoeMapFilter
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
