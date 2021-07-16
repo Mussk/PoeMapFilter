@@ -58,9 +58,6 @@ namespace PoeMapFIlter
                         {
                             if (AutoUpdater.DownloadUpdate(args))
                             {
-
-                                Assembly.GetExecutingAssembly().GetName().Version = new(assemblyVersion);
-
                                 Application.Exit();
                             }
                         }
