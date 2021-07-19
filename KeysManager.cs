@@ -13,45 +13,48 @@ namespace PoeMapFilter
 {
     public class KeysManager
     {
-        private HotkeyListener hkl { get; set; }
+        private HotkeyListener HkListener { get; set; }
 
-        public Hotkey hotkey { get; set; }
+        public Hotkey Hotkey { get; set; }
 
-        public static Hotkey DefaultHotkey = new(Keys.Control, Keys.B);
+        public static readonly Hotkey DefaultHotkey = new(Keys.Control, Keys.B);
         
-        private InputSimulator sim;
+        private readonly InputSimulator sim;
 
-        public Program program;
+        private MapWindowLogic MapWindowLogic;
 
-        public KeysManager(Program program)
+        public KeysManager(MapWindowLogic MapWindowLogic)
         {
-            this.program = program;
-            this.hkl = new();
-            this.hotkey = DefaultHotkey;
-            this.hkl.Add(hotkey);
+            this.MapWindowLogic = MapWindowLogic;
+            this.HkListener = new();
+            this.Hotkey = Serialization<Hotkey>.Deserialize<Hotkey>("Hotkey.json");
+            if (this.Hotkey.ToString().Equals("None"))
+                this.Hotkey = DefaultHotkey;
+            this.HkListener.Add(Hotkey);
 
-            hkl.HotkeyPressed += Hkl_HotkeyPressed;
+            HkListener.HotkeyPressed += Hkl_HotkeyPressed;
 
             sim = new InputSimulator();
         }
 
         private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
         {         
-            if (e.Hotkey == hotkey)
+            if (e.Hotkey == Hotkey)
             {           
-                sim.Keyboard.ModifiedKeyStroke(WindowsInput.Native.VirtualKeyCode.CONTROL, WindowsInput.Native.VirtualKeyCode.VK_C);
+                sim.Keyboard.ModifiedKeyStroke(WindowsInput.Native.VirtualKeyCode.CONTROL,
+                                                WindowsInput.Native.VirtualKeyCode.VK_C);
 
-                program.run_program();   
+                MapWindowLogic.Run_MapWindowLogic();   
             }
         }
 
-        public void setNewHotkey(Hotkey hotkeyToSet) 
+        public void SetNewHotkey(Hotkey hotkeyToSet) 
         {
-            hkl.Remove(hotkey);
+            HkListener.Remove(Hotkey);
             if (!hotkeyToSet.ToString().Equals("None"))
-                hkl.Add(hotkeyToSet);
-            else hkl.Add(DefaultHotkey);
-            hotkey = hotkeyToSet;
+                HkListener.Add(hotkeyToSet);
+            else HkListener.Add(DefaultHotkey);
+            Hotkey = hotkeyToSet;
 
         }
     }

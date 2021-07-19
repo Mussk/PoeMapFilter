@@ -19,6 +19,7 @@
     <None Remove="resources\icon\LogoTextWindow.ico" />
     <None Remove="resources\logo.png" />
     <None Remove="resources\logo_white.png" />
+    <None Remove="resources\pictures\LogoNoText.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +49,9 @@
     <Resource Include="resources\pictures\GitHub-Mark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="resources\pictures\LogoNoText.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -75,9 +79,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="resources\icon\LogoText.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="resources\pictures\LogoNoText.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

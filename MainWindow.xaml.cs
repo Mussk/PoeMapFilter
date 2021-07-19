@@ -1,17 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Controls.Primitives;
-using System.Threading;
-using System.Resources;
-using System.Reflection;
-using System.Globalization;
 using Resx = PoeMapFIlter.resources.lang.Resources;
 
 namespace PoeMapFilter
@@ -22,35 +15,34 @@ namespace PoeMapFilter
     public partial class MainWindow : Window
     {
 
-        ObservableCollection<string> mods_to_show;
+        ObservableCollection<string> ModsToShow;
 
         public MainWindow()
         {           
             InitializeComponent();
         }
 
-        public void Set_Data_Contexts(Map map) {
+        public void SetDataContexts(Map map) {
 
-            mapName_textBlock.Text = map.mapName;
-            mapAtlasRegion_textBlock.Text = map.mapAtlasRegion;
+            mapName_textBlock.Text = map.MapName;
+            mapAtlasRegion_textBlock.Text = map.MapAtlasRegion;
 
-            mapItemQuantity_textBlock.Text = string.Format(Resx.QuantityTextBox, map.mapItemQuantity);
-            mapTier_textBlock.Text = Resx.TierTextBox + map.mapTier;
+            mapItemQuantity_textBlock.Text = string.Format(Resx.QuantityTextBox, map.MapItemQuantity);
+            mapTier_textBlock.Text = Resx.TierTextBox + map.MapTier;
 
-            mods_to_show = new ObservableCollection<string>(map.mapMods);
+            ModsToShow = new ObservableCollection<string>(map.MapMods);
 
-            Mods_ListBox.ItemsSource = mods_to_show;
+            Mods_ListBox.ItemsSource = ModsToShow;
             
         }
 
-        public void changeRowBackgroundColorListBox(Brush brush, string mod)
+        public void ChangeRowBackgroundColorListBox(Brush brush, string mod)
         {
-
             var rows = GetListBoxRows(Mods_ListBox);
 
                foreach (var row in rows) 
-                   if (PoeWikiJSONIteraction.Replace_digits(row.Content.ToString())
-                    .Equals(PoeWikiJSONIteraction.Replace_digits(mod)))
+                   if (PoeWikiJSONIteraction.ReplaceDigits(row.Content.ToString())
+                    .Equals(PoeWikiJSONIteraction.ReplaceDigits(mod)))
                         row.Background = brush;
                    
                Mods_ListBox.UpdateLayout(); 
@@ -63,9 +55,8 @@ namespace PoeMapFilter
             foreach (var item in itemsSource)
             {
                 if (listBox.ItemContainerGenerator.Status == GeneratorStatus.NotStarted)
-                {
                     GenerateItemContainerGeneratorListBox(listBox);
-                }
+
                 listBox.ScrollIntoView(item);
                 var row = listBox.ItemContainerGenerator.ContainerFromItem(item) as ListBoxItem;
                 if (row != null) yield return row;
@@ -74,7 +65,6 @@ namespace PoeMapFilter
 
         public void GenerateItemContainerGeneratorListBox(ListBox listBox)
         {
-
             IItemContainerGenerator generator = listBox.ItemContainerGenerator;
             GeneratorPosition position = generator.GeneratorPositionFromIndex(0);
             using (generator.StartAt(position, GeneratorDirection.Forward, true))
@@ -92,11 +82,6 @@ namespace PoeMapFilter
         {
             e.Cancel = true;
             this.Hide();
-        }
-
-        private void Mods_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

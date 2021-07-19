@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using PoeMapFilter.ViewModels;
-using System.IO;
-using System.Windows.Input;
 using WK.Libraries.HotkeyListenerNS;
-using System.Resources;
 using Resx = PoeMapFIlter.resources.lang.Resources;
 using System.Threading;
 
@@ -39,11 +34,11 @@ namespace PoeMapFilter
         public static int LangIndex = Serialization<int>.
                 Deserialize<int>("SelectedLang.json");
 
-        private Program program;
+        private MapWindowLogic MapWindowLogic;
 
         private KeysManager km;
 
-        public Settings(KeysManager km, Program program)
+        public Settings(KeysManager km, MapWindowLogic MapWindowLogic)
         {
             var poeWikiJsonIteraction = new PoeWikiJSONIteraction();
 
@@ -54,7 +49,7 @@ namespace PoeMapFilter
 
                 InitializeComponent();
 
-                this.program = program;
+                this.MapWindowLogic = MapWindowLogic;
 
                 this.km = km;
 
@@ -69,13 +64,13 @@ namespace PoeMapFilter
                 Settings_AllMods_ListView.ItemsSource = allModsToShow;
 
                 var hks = new HotkeySelectorWPF();
-                hks.Enable(Settings_Hotkey_TextBox, km.hotkey);
+                hks.Enable(Settings_Hotkey_TextBox, km.Hotkey);
 
                 IsSoundSignalEnabled = Serialization<bool>.Deserialize<bool>("SoundSignal.json");
                 Settings_SoundSignal_CheckBox.IsChecked = IsSoundSignalEnabled;
 
                 //remove mods from allModsList which are already in selected mods
-                RemoveSelectedMods(allModsList, selectedModViewModel.selectedModsToShow);
+                RemoveSelectedMods(allModsList, selectedModViewModel.SelectedModsToShow);
 
                 this.Show();
             }
@@ -89,7 +84,7 @@ namespace PoeMapFilter
 
         private void Button_Add_Click(object sender, RoutedEventArgs e)
         {
-            selectedModViewModel.selectedModsToShow.Add(new SelectedModViewItem(Settings_AllMods_ListView.SelectedItem.ToString()
+            selectedModViewModel.SelectedModsToShow.Add(new SelectedModViewItem(Settings_AllMods_ListView.SelectedItem.ToString()
                                                                                 , SelectedModViewItem.DefaultColor));
 
             allModsToShow.Remove(Settings_AllMods_ListView.SelectedItem.ToString());
@@ -103,9 +98,9 @@ namespace PoeMapFilter
 
             for (int i = 0; i < array.Length; i++)
             {
-                selectedModViewModel.selectedModsToShow.Remove(array[i]);
+                selectedModViewModel.SelectedModsToShow.Remove(array[i]);
 
-                allModsToShow.Add(array[i].modContext);
+                allModsToShow.Add(array[i].ModContext);
             }
         }
 
@@ -138,8 +133,8 @@ namespace PoeMapFilter
 
             if (SelectedModsList.Count != 0)
                 foreach (var mod in SelectedModsList) 
-                    if (AllModsList.Contains(mod.modContext))
-                        AllModsList.Remove(mod.modContext);
+                    if (AllModsList.Contains(mod.ModContext))
+                        AllModsList.Remove(mod.ModContext);
         }
 
         private void AddBack_Mods(IEnumerable<string> filteredData)
@@ -168,12 +163,12 @@ namespace PoeMapFilter
 
         private void Settings_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            km.setNewHotkey(new Hotkey(Settings_Hotkey_TextBox.Text));
+            km.SetNewHotkey(new Hotkey(Settings_Hotkey_TextBox.Text));
 
             SerializeSettings();
         }
 
-        private void Button_About_Click(object sender, RoutedEventArgs e)
+        private void Label_About_Click(object sender, RoutedEventArgs e)
         {
             new About().Show();
         }
@@ -187,12 +182,12 @@ namespace PoeMapFilter
         {
             Serialization<SelectedModViewModel>.Serialize(selectedModViewModel, "SelectedModViewModel.json",
                                                             Thread.CurrentThread.CurrentUICulture);
-            program._selectedModViewModel = Serialization<SelectedModViewModel>
+            MapWindowLogic.SelectedModViewModel = Serialization<SelectedModViewModel>
                                                     .Deserialize<SelectedModViewModel>("SelectedModViewModel.json",
                                                                                        Thread.CurrentThread.CurrentUICulture);
 
-            Serialization<Hotkey>.Serialize(km.hotkey, "Hotkey.json");
-            km.hotkey = Serialization<Hotkey>.Deserialize<Hotkey>("Hotkey.json");
+            Serialization<Hotkey>.Serialize(km.Hotkey, "Hotkey.json");
+            km.Hotkey = Serialization<Hotkey>.Deserialize<Hotkey>("Hotkey.json");
 
             Serialization<bool>.Serialize(IsSoundSignalEnabled, "SoundSignal.json");
             IsSoundSignalEnabled = Serialization<bool>.Deserialize<bool>("SoundSignal.json");

@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Media;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Media;
 
 namespace PoeMapFilter.ViewModels
 {
     public class SelectedModViewItem
     {
-        public string modContext { get; set; }
+        public string ModContext { get; set; }
 
-        public Color color { get; set; }
+        public Color Color { get; set; }
 
         public static readonly Color DefaultColor = Colors.Red;
 
-        public SelectedModViewItem(string modContext, Color color)
+        public SelectedModViewItem(string ModContext, Color Color)
         {
-            this.modContext = modContext;
-            this.color = color;
+            this.ModContext = ModContext;
+            this.Color = Color;
         }
     }
 }

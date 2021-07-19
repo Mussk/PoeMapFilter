@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows;
 using Resx = PoeMapFIlter.resources.lang.Resources;
 
 
@@ -14,8 +10,7 @@ namespace PoeMapFilter
 {
     class PoeWikiJSONIteraction
     {
-
-        public static string API_STATUS_URL = "https://pathofexile.fandom.com/api.php";
+        public static readonly string API_STATUS_URL = "https://pathofexile.fandom.com/api.php";
 
         //this url gets json of all map mods
         public static string URL = Resx.PoeWikiMapModsURL;
@@ -25,7 +20,7 @@ namespace PoeMapFilter
             bool HasConnection = false;
             try
             {
-                using (MyWebClient wc = new MyWebClient())
+                using (MyWebClient wc = new())
                 {
                     using (var stream = wc.OpenRead(API_STATUS_URL))
                     {
@@ -47,12 +42,10 @@ namespace PoeMapFilter
         {
             if (CheckConnectionWithAPI())
             {
-                string json_str = "";
-
-                using (MyWebClient wc = new MyWebClient())
+                using (MyWebClient wc = new())
                 {
-                    json_str = wc.DownloadString(url);
-                    return JObject.Parse(json_str);
+                    string jsonStr = wc.DownloadString(url);
+                    return JObject.Parse(jsonStr);
                 }
             }
             else return default;   
@@ -68,11 +61,11 @@ namespace PoeMapFilter
                     if (e["title"]["stat text"].ToString().Contains(Resx.JsonParseHiddenString))
                     {
 
-                        var arr = e["title"]["stat text"]
+                        var Mods = e["title"]["stat text"]
                                     .ToString()
                                     .Split(';');
 
-                        e = arr[arr.Length - 5].Split("&")[0];
+                        e = Mods[Mods.Length - 5].Split("&")[0];
                     }
                     else 
                     {
@@ -85,12 +78,12 @@ namespace PoeMapFilter
                 .Select(e =>
                 {
 
-                    e = Replace_words(e);
+                    e = ReplaceWords(e);
 
                     if (e.Contains("[")) e = e.Replace("[", "");
                     if (e.Contains("]")) e = e.Replace("]", "");
 
-                    e = Replace_digits(e);
+                    e = ReplaceDigits(e);
 
                     return e;
 
@@ -110,22 +103,22 @@ namespace PoeMapFilter
             return result;
         }
 
-        public static string Replace_digits(string arg)
+        public static string ReplaceDigits(string arg)
         {
 
-            var regex_digits = new Regex(@"(\([0-9]{1,3}-[0-9]{1,3}\))|([0-9]{1,3})");
+            var regexDigits = new Regex(@"(\([0-9]{1,3}-[0-9]{1,3}\))|([0-9]{1,3})");
 
-            if (regex_digits.IsMatch(arg)) arg = regex_digits.Replace(arg, "#");
+            if (regexDigits.IsMatch(arg)) arg = regexDigits.Replace(arg, "#");
 
             return arg;
         }
 
-        public static string Replace_words(string arg)
+        public static string ReplaceWords(string arg)
         {
 
-            var regex_words = new Regex(@"\[\[.*\|");
+            var regexWords = new Regex(@"\[\[.*\|");
 
-            if (regex_words.IsMatch(arg)) arg = regex_words.Replace(arg, "");
+            if (regexWords.IsMatch(arg)) arg = regexWords.Replace(arg, "");
 
             return arg;
         }

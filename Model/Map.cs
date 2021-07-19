@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PoeMapFilter
 {
     public class Map
     {
-        public string mapName { get; set; }
-        public int mapTier { get; set; }
-        public string mapAtlasRegion { get; set; }
-        public double mapItemQuantity { get; set; }
-        public List<string> mapMods { get; set; }
+        public string MapName { get; set; }
+        public int MapTier { get; set; }
+        public string MapAtlasRegion { get; set; }
+        public double MapItemQuantity { get; set; }
+        public List<string> MapMods { get; set; }
 
-        public static string MAP_SEPARATOR = "--------";
+        public static readonly string MAP_SEPARATOR = "--------";
 
         //for first initialization
-        public Map(string mapName, int mapTier, string mapAtlasRegion, double mapItemQuantity)
+        public Map(string MapName, int MapTier, string MapAtlasRegion, double MapItemQuantity)
         {
-            this.mapName = mapName;
-            this.mapTier = mapTier;
-            this.mapAtlasRegion = mapAtlasRegion;
-            this.mapItemQuantity = mapItemQuantity;
-            this.mapMods = createInitialModsList();
+            this.MapName = MapName;
+            this.MapTier = MapTier;
+            this.MapAtlasRegion = MapAtlasRegion;
+            this.MapItemQuantity = MapItemQuantity;
+            this.MapMods = createInitialModsList();
         }
 
-        public Map() { }
+        public Map() {}
 
         private List<string> createInitialModsList() {
 
@@ -36,12 +32,12 @@ namespace PoeMapFilter
             return res;
         }
 
-        public bool checkImplicitMod(string[] map_by_lines) {
+        public bool CheckImplicitMod(string[] MapByLines) {
 
             int count = 0;
 
-            foreach (var line in map_by_lines)
-                if (line.Equals("--------"))
+            foreach (var line in MapByLines)
+                if (line.Equals(MAP_SEPARATOR))
                     count++;
 
             return count == 5;

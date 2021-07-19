@@ -14,21 +14,24 @@ namespace PoeMapFilter
         {
             InitializeComponent();
 
-            About_Version_Label.Content += Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            About_Version_Label.Content += Assembly.GetExecutingAssembly()
+                                                    .GetName()
+                                                    .Version
+                                                    .ToString();
         }
         private void Image_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer.exe",Links.GitHubPage);
+            Process.Start("explorer.exe", Links.GitHubPage);
         }
 
         private void Label_Bug_Click(object sender, RoutedEventArgs e)
         { 
-            Process.Start("explorer.exe",Links.BugReport);
+            Process.Start("explorer.exe", Links.BugReport);
         }
 
         private void Label_Font_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("explorer.exe",Links.FontLink);
+            Process.Start("explorer.exe", Links.FontLink);
         }
     }
 }

@@ -159,29 +159,12 @@
                       Checked="Settings_SoundSignal_CheckBox_Checked" 
                       Unchecked="Settings_SoundSignal_CheckBox_Unchecked"
                       x:Name="Settings_SoundSignal_CheckBox"/>
-            <Button Grid.Column="0" Grid.Row="9" Margin="25 0 0 0" 
-                    VerticalAlignment="Center" 
-                    Content="{x:Static res:Resources.AboutButton}" 
-                    Cursor="Hand" 
-                    Click="Button_About_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <TextBlock ><InlineUIContainer>
-                                <ContentPresenter />
-                            </InlineUIContainer></TextBlock>
-                    </ControlTemplate>
-                </Button.Template>
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Foreground" Value="Blue" />
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Foreground" Value="Red" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
+            <Label Grid.Column="0" Grid.Row="9" Margin="25 0 0 0" 
+                    VerticalContentAlignment="Center">
+                <Hyperlink Click="Label_About_Click" TextDecorations="None" Foreground="White">
+                    <TextBlock Text="{x:Static res:Resources.AboutButton}"/>
+                </Hyperlink>
+            </Label>
         </Grid>
     </DockPanel>
 </Window>

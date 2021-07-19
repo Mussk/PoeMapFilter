@@ -1,6 +1,5 @@
 ﻿using PoeMapFIlter;
 using System;
-using System.Drawing;
 using Forms = System.Windows.Forms;
 using Resx = PoeMapFIlter.resources.lang.Resources;
 
@@ -10,15 +9,13 @@ namespace PoeMapFilter
     {
         private readonly Forms.NotifyIcon _notifyIcon;
 
-        private Program program;
+        private MapWindowLogic MapWindowLogic;
 
         private KeysManager keysManager;
 
-        
-
-        public MyNotifyIcon(Program program,KeysManager keysManager)
+        public MyNotifyIcon(MapWindowLogic MapWindowLogic,KeysManager keysManager)
         {
-            this.program = program;
+            this.MapWindowLogic = MapWindowLogic;
             this.keysManager = keysManager;
             _notifyIcon = new();
             _notifyIcon.Icon = new System.Drawing.Icon("resources/icon/LogoText.ico");
@@ -26,29 +23,29 @@ namespace PoeMapFilter
             _notifyIcon.Visible = true;
 
             _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
-            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconCheckUpdates, null, onUpdatesClick);
-            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconSettings, null, onSettingsClick);
-            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconGitHubPage, null, onGitHubClick);
-            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconExit, null, onExitClick);
+            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconCheckUpdates, null, OnUpdatesClick);
+            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconSettings, null, OnSettingsClick);
+            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconGitHubPage, null, OnGitHubClick);
+            _notifyIcon.ContextMenuStrip.Items.Add(Resx.NotifyIconExit, null, OnExitClick);
            
         }
 
-        private void onGitHubClick(object sender, EventArgs e)
+        private void OnGitHubClick(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe",Links.GitHubPage);
+            System.Diagnostics.Process.Start("explorer.exe", Links.GitHubPage);
         }
 
-        private void onUpdatesClick(object sender, EventArgs e)
+        private void OnUpdatesClick(object sender, EventArgs e)
         {
             new UpdateHandler();
         }
 
-        private void onSettingsClick(object sender, EventArgs e)
+        private void OnSettingsClick(object sender, EventArgs e)
         {
-            new Settings(keysManager, program);
+            new Settings(keysManager, MapWindowLogic);
         }
 
-        private void onExitClick(object sender, EventArgs e)
+        private void OnExitClick(object sender, EventArgs e)
         {
             MyDispose();
 

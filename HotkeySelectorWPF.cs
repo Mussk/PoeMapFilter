@@ -29,6 +29,10 @@ namespace WK.Libraries.HotkeyListenerNS
     //[DebuggerStepThrough]
     [Description("Provides support for enabling standard Windows controls " +
                  "and User controls to select hotkeys at runtime.")]
+
+    ///This class is addition for HotkeyListenerNS library,
+    ///here is a link to author: https://github.com/Willy-Kimura/HotkeyListener/issues/12
+
     public partial class HotkeySelectorWPF : Component
     {
         #region Constructor

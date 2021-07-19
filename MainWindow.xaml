@@ -36,8 +36,7 @@
             <ListBox Name="Mods_ListBox" HorizontalContentAlignment="Stretch" 
                      Grid.Row="5" 
                      Grid.Column="0" 
-                     Grid.ColumnSpan="4" 
-                     SelectionChanged="Mods_ListBox_SelectionChanged"
+                     Grid.ColumnSpan="4"
                      Margin="10 0 10 20">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

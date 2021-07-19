@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using WK.Libraries.HotkeyListenerNS;
 using System.Threading;
 using System.Globalization;
@@ -17,30 +10,25 @@ namespace PoeMapFilter
     /// </summary>
     public partial class App : Application
     {
-
         private MainWindow mainWindow;
 
-        private Program program;
+        private MapWindowLogic MapWindowLogic;
 
         private KeysManager keysManager;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-
             SetLanguage(Settings.LangIndex);
 
             mainWindow = new();
 
             mainWindow.Show();
 
-            program = new(mainWindow);
+            MapWindowLogic = new(mainWindow);
 
-            keysManager = new(program);
-            keysManager.hotkey = Serialization<Hotkey>.Deserialize<Hotkey>("Hotkey.json");
-            if (keysManager.hotkey.ToString().Equals("None"))
-                keysManager.hotkey = KeysManager.DefaultHotkey;
-
-            MyNotifyIcon myNotifyIcon = new(program, keysManager);
+            keysManager = new(MapWindowLogic);
+            
+            new MyNotifyIcon(MapWindowLogic, keysManager);
 
         }
 
@@ -56,13 +44,6 @@ namespace PoeMapFilter
                     break;
             }
             
-        }
-
-        private void Application_Exit(object sender, ExitEventArgs e)
-        {
-          
-
-
         }
     }
 }

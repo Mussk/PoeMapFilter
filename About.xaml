@@ -29,8 +29,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"  HorizontalAlignment="Left" Width="200" Margin="100,45,0,19" 
-                   Source="\resources\pictures\LogoNoText.png"
+            <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" Width="200" Margin="100,40,0,19" 
+                   Source="pack://application:,,,/resources/pictures/LogoNoText.png"
                    RenderOptions.BitmapScalingMode="Fant" Grid.RowSpan="2"/>
             <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" Width="300" Content="PoeMapFilter"
                    HorizontalContentAlignment="Center"
@@ -45,21 +45,31 @@
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    FontSize="20" FontFamily="{StaticResource Fontin-Regular}"/>
-            <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"  HorizontalAlignment="Center" Width="Auto" Margin="100 10 100 10" 
-                   Source="/resources/pictures/GitHub-Mark.png" 
-                   Hyperlink.Click="Image_Click"/>
-            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Width="Auto" Content="{x:Static res:Resources.About_FontByLabel}"
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Center" Width="Auto" Margin="100 10 100 10">
+                <Hyperlink Click="Image_Click" TextDecorations="None">
+                    <Image Source="/resources/pictures/GitHub-Mark.png"/>
+                </Hyperlink>
+            </TextBlock>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Width="Auto"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
-                   FontSize="14" FontFamily="{StaticResource Fontin-Regular}" Hyperlink.Click="Label_Font_Click"/>
+                   FontSize="14" FontFamily="{StaticResource Fontin-Regular}">
+                <Hyperlink Click="Label_Font_Click" TextDecorations="None" Foreground="White">
+                    <TextBlock Text="{x:Static res:Resources.About_FontByLabel}"/>
+                </Hyperlink>
+            </Label>
             <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Width="Auto" Content="Copyright (c) 2021 Mussk"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
                    FontSize="13" FontFamily="{StaticResource Fontin-Regular}"/>
-            <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" Width="Auto" Content="{x:Static res:Resources.About_FoundBugLabel}"
+            <Label Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" Width="Auto"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"
-                   FontSize="13" FontFamily="{StaticResource Fontin-Regular}" Hyperlink.Click="Label_Bug_Click"/>
+                   FontSize="13" FontFamily="{StaticResource Fontin-Regular}">
+                <Hyperlink Click="Label_Bug_Click" TextDecorations="None" Foreground="White">
+                    <TextBlock Text="{x:Static res:Resources.About_FoundBugLabel}"/>
+                </Hyperlink>
+             </Label>
         </Grid>
     </DockPanel>
 </Window>
