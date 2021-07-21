@@ -187,7 +187,7 @@ namespace PoeMapFIlter.resources.lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language (restart needed):.
+        ///   Looks up a localized string similar to Client language (restart needed):.
         /// </summary>
         public static string LanguageLabel {
             get {

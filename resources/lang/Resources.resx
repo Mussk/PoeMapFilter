@@ -160,7 +160,7 @@
     <value>Attention! After changing the language for the first time mods should be seleced again.</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Language (restart needed):</value>
+    <value>Client language (restart needed):</value>
   </data>
   <data name="MapWindowName" xml:space="preserve">
     <value>Map Window</value>

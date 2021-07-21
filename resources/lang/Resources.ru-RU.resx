@@ -160,7 +160,7 @@
     <value>Внимание! После смены языка в первый раз необходимо снова выбрать моды.</value>
   </data>
   <data name="LanguageLabel" xml:space="preserve">
-    <value>Язык (нужен перезапуск):</value>
+    <value>Язык клиента (нужен перезапуск):</value>
   </data>
   <data name="MapWindowName" xml:space="preserve">
     <value>Окно карты</value>
