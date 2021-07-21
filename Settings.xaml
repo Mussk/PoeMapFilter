@@ -22,7 +22,7 @@
             <xctk:ColorPicker IsEnabled="True" Width="40"
                                               AvailableColorsSortingMode="HueSaturationBrightness"
                                               SelectedColorChanged="ColorPicker_SelectedColorChanged" 
-                                              SelectedColor="{Binding color}"
+                                              SelectedColor="{Binding Color}"
                                               HorizontalAlignment="Right"
                                                 Margin="5 0 0 0"/>
         </DataTemplate>
@@ -73,14 +73,14 @@
             </Border>
             <Border BorderBrush="#89FF0000" Grid.Row="3" Grid.Column="3" BorderThickness="2" Margin="0 0 20 0">
                 <ListView Grid.Column="3" Grid.Row="3" Margin="0 0 20 0" x:Name="Settings_SelectedMods_ListView" 
-                          ItemsSource="{Binding selectedModsToShow}"
+                          ItemsSource="{Binding SelectedModsToShow}"
                       SelectionMode="Multiple" 
                       dd:DragDrop.IsDropTarget="True" 
                       dd:DragDrop.DropHandler="{Binding}"
                       >
                     <ListView.View>
                         <GridView AllowsColumnReorder="False" ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">
-                            <GridViewColumn Width="190" DisplayMemberBinding="{Binding modContext}"/>
+                            <GridViewColumn Width="190" DisplayMemberBinding="{Binding ModContext}"/>
                             <GridViewColumn CellTemplate="{StaticResource SelectedModsListViewColorPicker}"/>
                         </GridView>
                     </ListView.View>
@@ -127,7 +127,7 @@
                 </TextBox>
                 <TextBox Grid.Column="0" 
                          Grid.Row="7" 
-                         Margin="20 0 0 0" 
+                         Margin="20 0 5 0" 
                          Text="{x:Static res:Resources.LanguageLabel}"
                    VerticalContentAlignment="Center" TextWrapping="Wrap"
                      IsReadOnly="True"
